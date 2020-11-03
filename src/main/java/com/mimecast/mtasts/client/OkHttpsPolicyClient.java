@@ -100,7 +100,7 @@ public class OkHttpsPolicyClient extends ConfigHandler implements HttpsPolicyCli
      * @throws KeyManagementException   Key management exception.
      * @throws NoSuchAlgorithmException No such algorithm exception.
      */
-    private OkHttpClient getClient() throws KeyManagementException, NoSuchAlgorithmException {
+    protected OkHttpClient getClient() throws KeyManagementException, NoSuchAlgorithmException {
         // Client.
         SSLContext sslContext = SSLContext.getInstance("TLSv1.2");
         sslContext.init(null, new TrustManager[] { trustManager }, null);
