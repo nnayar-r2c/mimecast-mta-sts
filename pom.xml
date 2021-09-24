@@ -5,22 +5,27 @@
     <groupId>com.mimecast</groupId>
     <artifactId>mta-sts</artifactId>
     <name>mta-sts</name>
-    <version>1.3-SNAPSHOT</version>
+    <version>1.3.4-SNAPSHOT</version>
     <packaging>jar</packaging>
     <description>MTA Strict Transport Security.</description>
+
+    <scm>
+        <url>https://gitlab.devuk.mimecast.lan:2443/Messaging/mta-sts</url>
+        <connection>scm:git:git://gitlab.devuk.mimecast.lan:2443/Messaging/mta-sts.git</connection>
+        <developerConnection>scm:git:ssh://git@gitlab.devuk.mimecast.lan/Messaging/mta-sts.git</developerConnection>
+        <tag>HEAD</tag>
+    </scm>
+
+    <parent>
+        <groupId>com.mimecast</groupId>
+        <artifactId>mimecast-parent</artifactId>
+        <version>1.2.2</version>
+    </parent>
 
     <properties>
         <jdk.version>1.8</jdk.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-
-    <distributionManagement>
-        <repository>
-            <id>github</id>
-            <name>GitHub Mimecast Apache Maven Packages</name>
-            <url>https://maven.pkg.github.com/mimecast/mta-sts</url>
-        </repository>
-    </distributionManagement>
 
     <dependencies>
         <dependency>

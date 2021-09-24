@@ -24,9 +24,8 @@ import java.util.concurrent.TimeUnit;
  * OK HTTPS Policy Client.
  * <p>HTTPS client implemenation specific for MTA-STS.
  *
- * @link https://tools.ietf.org/html/rfc8461#section-3.3 RFC8461#section-3.3
- *
  * @author "Vlad Marian" <vmarian@mimecast.com>
+ * @link https://tools.ietf.org/html/rfc8461#section-3.3 RFC8461#section-3.3
  * @link http://mimecast.com Mimecast
  */
 public class OkHttpsPolicyClient extends ConfigHandler implements HttpsPolicyClient {
@@ -35,7 +34,7 @@ public class OkHttpsPolicyClient extends ConfigHandler implements HttpsPolicyCli
     /**
      * Trust manager to use for certificate validation.
      */
-    private final X509TrustManager trustManager;
+    protected final X509TrustManager trustManager;
 
     /**
      * Constructs a new HttpPolicyClient instance.
@@ -100,10 +99,10 @@ public class OkHttpsPolicyClient extends ConfigHandler implements HttpsPolicyCli
      * @throws KeyManagementException   Key management exception.
      * @throws NoSuchAlgorithmException No such algorithm exception.
      */
-    private OkHttpClient getClient() throws KeyManagementException, NoSuchAlgorithmException {
+    protected OkHttpClient getClient() throws KeyManagementException, NoSuchAlgorithmException {
         // Client.
         SSLContext sslContext = SSLContext.getInstance("TLSv1.2");
-        sslContext.init(null, new TrustManager[] { trustManager }, null);
+        sslContext.init(null, new TrustManager[]{trustManager}, null);
         SSLSocketFactory socketFactory = sslContext.getSocketFactory();
 
         return getBuilder(socketFactory).build();
@@ -131,7 +130,7 @@ public class OkHttpsPolicyClient extends ConfigHandler implements HttpsPolicyCli
     /**
      * Transforms User-Agent header on the request.
      */
-    static class UserAgentInterceptor implements Interceptor {
+    protected static class UserAgentInterceptor implements Interceptor {
 
         /**
          * Intercepts request and modifies User-Agent header.
