@@ -23,7 +23,7 @@ public enum StsMode {
 
     /**
      * Mode ENFORCE.
-     * <p>MUST NOT deliver to hosts that fail MX matching or certificate validation or that do not support STARTTLS.
+     * <p>MUST NOT deliver to the hosts that fail MX matching or certificate validation or that do not support STARTTLS.
      */
     ENFORCE ("enforce");
 

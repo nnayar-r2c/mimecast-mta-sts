@@ -87,7 +87,7 @@ public class StrictTransportSecurity {
      * Gets policy with given domain string.
      * <p>Fetches DNS record every time.
      * <p>Checks record is valid.
-     * <p>Tryes to get policy from cache.
+     * <p>Tries to get policy from cache.
      * <p>If policy is not in cache will fetch and put it in cache.
      *
      * @param domain Domain string.
@@ -104,7 +104,7 @@ public class StrictTransportSecurity {
      * Gets policy with given domain string and config instance.
      * <p>Fetches DNS record every time.
      * <p>Checks record is valid.
-     * <p>Tryes to get policy from cache.
+     * <p>Tries to get policy from cache.
      * <p>If policy is not in cache will fetch and put it in cache.
      * <p>Config instance can be used to modify validation checks.
      *

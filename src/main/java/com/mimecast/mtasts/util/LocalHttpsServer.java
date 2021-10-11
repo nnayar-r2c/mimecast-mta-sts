@@ -45,7 +45,7 @@ public class LocalHttpsServer {
     /**
      * HttpsServer instance.
      */
-    private HttpsServer httpServer;
+    private final HttpsServer httpServer;
 
     /**
      * Constructs a new HttpPolicyServerMock instance.

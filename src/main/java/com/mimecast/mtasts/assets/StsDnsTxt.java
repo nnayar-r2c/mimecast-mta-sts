@@ -27,7 +27,7 @@ public abstract class StsDnsTxt {
 
     /**
      * Constructs a new StsDnsTxt instance.
-     * <p>The parser will not except on parsing so it should always be validated via the provided isValid() method.
+     * <p>The parser will not except on parsing, so it should always be validated via the provided isValid() method.
      *
      * @param record Record string.
      */

@@ -47,7 +47,7 @@ public class StsPolicyValidator {
     public String getPolicy(HttpsResponse response, Config config) {
         // Validate required.
         if (!response.isSuccessful()) {
-            log("Response unsuccessfull: " + response.getMessage(), true);
+            log("Response unsuccessful: " + response.getMessage(), true);
         }
         else if (response.getCode() != 200) {
             log("Response code invalid: " + response.getCode(), true);

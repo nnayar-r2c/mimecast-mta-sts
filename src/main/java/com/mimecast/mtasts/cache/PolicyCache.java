@@ -10,7 +10,7 @@ import java.util.Optional;
 /**
  * Policy cache.
  * <p>Abstract for policy cache implementation.
- * <p>Caching policies is highly recommended to save resources on all sides.
+ * <p>Caching policies is highly recommended saving resources on all sides.
  * <p>High load domains may implement rate limiting to protect their systems from abuse.
  *
  * @see StsPolicy

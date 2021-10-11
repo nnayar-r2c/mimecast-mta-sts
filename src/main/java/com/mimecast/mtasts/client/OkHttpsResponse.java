@@ -27,14 +27,15 @@ public class OkHttpsResponse implements HttpsResponse {
     private String message = null;
     private boolean handshake = false;
     private List<Certificate> certificates = new ArrayList<>();
-    private Map<String, String> headers = new HashMap<>();
+    private final Map<String, String> headers = new HashMap<>();
 
     /**
      * Constructs a new HttpsResponse instance with given OK HTTP Response.
-     * <p>Wrapper for OkHttpPolicyCLient response.
+     * <p>Wrapper for OkHttpPolicyClient response.
      *
      * @param response Response instance.
      */
+    @SuppressWarnings("ConstantConditions")
     public OkHttpsResponse(Response response) throws IOException {
         if (response != null) {
             body = response.body() != null ? response.body().string() : null;

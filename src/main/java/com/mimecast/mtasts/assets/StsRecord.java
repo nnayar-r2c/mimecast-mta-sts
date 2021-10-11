@@ -21,8 +21,8 @@ public final class StsRecord extends StsDnsTxt {
 
     /**
      * Constructs a new StsRecord instance.
-     * <p>Domain is required for refference and cache storage and lookup.
-     * <p>The parser will not except on parsing so it should always be validated via the provided isValid() method.
+     * <p>Domain is required for reference and cache storage and lookup.
+     * <p>The parser will not except on parsing, so it should always be validated via the provided isValid() method.
      *
      * @param domain Domain string.
      * @param record Record string.
@@ -44,7 +44,7 @@ public final class StsRecord extends StsDnsTxt {
     /**
      * Is valid.
      * <p>Checks both v (version) and ID are declared.
-     * <p>Only version 1 accepted but matched case insensitive to be more relaxed.
+     * <p>Only version 1 accepted but matched case-insensitive to be more relaxed.
      *
      * @return Boolean.
      */
