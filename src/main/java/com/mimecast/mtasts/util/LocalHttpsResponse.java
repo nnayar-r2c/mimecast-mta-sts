@@ -1,7 +1,5 @@
 package com.mimecast.mtasts.util;
 
-import java.net.HttpURLConnection;
-
 /**
  * Local HTTPS Response.
  * <p>Holds response payload and meta.
@@ -40,8 +38,6 @@ public class LocalHttpsResponse {
     /**
      * Response status code.
      * <p>Default: 200 (HTTP_OK)
-     *
-     * @see HttpURLConnection.HTTP_OK
      */
     private int code = 200;
 

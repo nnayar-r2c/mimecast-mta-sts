@@ -27,7 +27,7 @@ public class Pair {
     /**
      * Constructs a new Pair instance with given string.
      *
-     * @param key: value
+     * @param data: String.
      */
     public Pair(String data) {
         String[] splits = data.trim().split(":");

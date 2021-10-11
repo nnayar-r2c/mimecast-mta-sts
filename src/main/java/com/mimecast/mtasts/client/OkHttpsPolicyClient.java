@@ -22,7 +22,7 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * OK HTTPS Policy Client.
- * <p>HTTPS client implemenation specific for MTA-STS.
+ * <p>HTTPS client implementation specific for MTA-STS.
  *
  * @link https://tools.ietf.org/html/rfc8461#section-3.3 RFC8461#section-3.3
  *

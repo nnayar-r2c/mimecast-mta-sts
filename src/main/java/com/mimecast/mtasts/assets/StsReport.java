@@ -27,7 +27,7 @@ public final class StsReport extends StsDnsTxt {
 
     /**
      * Constructs a new StsReport instance.
-     * <p>The parser will not except on parsing so it should always be validated via the provided isValid() method.
+     * <p>The parser will not except on parsing, so it should always be validated via the provided isValid() method.
      *
      * @param record Record string.
      */
@@ -38,7 +38,7 @@ public final class StsReport extends StsDnsTxt {
 
     /**
      * Parse rua token.
-     * <p>We do this immediatly so we may properly validate.
+     * <p>We do this immediately so we may properly validate.
      */
     private void parseRua() {
         String token = tokens.get("rua");
@@ -59,7 +59,7 @@ public final class StsReport extends StsDnsTxt {
     /**
      * Is valid.
      * <p>Checks both v (version) and ID are declared.
-     * <p>Only version 1 accepted but matched case insensitive to be more relaxed.
+     * <p>Only version 1 accepted but matched case-insensitive to be more relaxed.
      *
      * @return Boolean.
      */

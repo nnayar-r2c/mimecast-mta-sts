@@ -100,7 +100,7 @@ public final class StsPolicy extends ConfigHandler {
      * <p>Requires a fresh StsRecord instance to construct so the pair can be cached together.
      * <p>While the record isn't used within it is required for update check.
      * <p>Whenever the policy is to be used a new record should be fetched to ensure the policy was not updated by comparing cached and new record IDs.
-     * <p>The parser will not except on parsing so it should always be validated via the provided isValid() method.
+     * <p>The parser will not except on parsing, so it should always be validated via the provided isValid() method.
      *
      * @param record StsRecord instance.
      * @param response HttpsResponse instance.

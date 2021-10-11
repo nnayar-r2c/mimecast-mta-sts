@@ -8,7 +8,7 @@ import java.util.Map;
 /**
  * Memory policy cache.
  * <p>Stores StsPolicy instances in a deque map.
- * <p>For perfomance reasons this is limited to 100 entries.
+ * <p>For performance reasons this is limited to 100 entries.
  * <p>In production environments a cloud cache implementation should be used instead.
  *
  * @see StsPolicy
