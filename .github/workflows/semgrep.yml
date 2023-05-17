@@ -1,5 +1,5 @@
-on:
-  workflow_dispatch: {}
+on: 
+  workflow_dispatch: 
   pull_request: {}
   push:
     branches:
@@ -9,16 +9,40 @@ on:
     - .github/workflows/semgrep.yml
   schedule:
   # random HH:MM to avoid a load spike on GitHub Actions at 00:00
-  - cron: 45 18 * * *
+  - cron: 00 5 * * 1
 name: Semgrep
 jobs:
+  buildmavenDepTree: 
+      runs-on: ubuntu-latest
+      steps:
+      - uses: actions/checkout@v3
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+      - name: Build with Maven
+        run: mvn --batch-mode --update-snapshots package
+      - name: Build Dependency Tree
+        run: mvn dependency:tree -DoutputFile=maven_dep_tree.txt
+      - name: Upload Dependency Tree Artifact     
+        uses: actions/upload-artifact@v3
+        with:
+          name: mavendeptree
+          path: maven_dep_tree.txt
   semgrep:
-    name: semgrep/ci
+    needs: buildmavenDepTree
+    name: Scan
     runs-on: ubuntu-20.04
     env:
       SEMGREP_APP_TOKEN: ${{ secrets.SEMGREP_APP_TOKEN }}
+      SEMGREP_REPO_NAME: ${{ secrets.SEMGREP_REPO_NAME }}
     container:
       image: returntocorp/semgrep
     steps:
-    - uses: actions/checkout@v3
-    - run: semgrep ci
+      - uses: actions/checkout@v3
+      - name: Download artifact from previous job
+        uses: actions/download-artifact@v3
+        with:
+          name: mavendeptree
+      - run: semgrep ci
