@@ -21,8 +21,8 @@ jobs:
         with:
           java-version: '16'
           distribution: 'temurin'
-      - name: Build with Maven
-        run: mvn --batch-mode --update-snapshots package
+#       - name: Build with Maven
+#         run: mvn --batch-mode --update-snapshots package
       - name: Build Dependency Tree
         run: mvn dependency:tree -DoutputFile=maven_dep_tree.txt
       - name: Upload Dependency Tree Artifact     
